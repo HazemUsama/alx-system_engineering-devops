@@ -1,1 +1,2 @@
-what are you expecting?
+#!/bin/bash
+echo 'what are you expecting?'
