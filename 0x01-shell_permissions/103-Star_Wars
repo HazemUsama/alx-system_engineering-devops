@@ -1,2 +1,2 @@
 #!/bin/bash
-echo 'what are you expecting?'
+telnet towel.blinkenlights.nl
