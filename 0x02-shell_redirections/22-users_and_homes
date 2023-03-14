@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -e [a-zA-Z]:/home /etc/passwd | sort
+cat /etc/passwd | sort -t: -k1 | cut -d: -f1,6 | tr : " "
