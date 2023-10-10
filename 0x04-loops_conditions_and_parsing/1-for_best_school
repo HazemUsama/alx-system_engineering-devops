@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
+# displays Best School 10 times
 
-n=1; echo -n "$n "
-
-let "n = $n + 1"   # let "n = n + 1"  also works.
-echo -n "$n "
-
+for i in {0..9}
+do
+	echo "Best School"
+done
