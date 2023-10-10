@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# displays Best School 10 times
+
+h=0
+m=0
+while [ $h -ne 12 ]
+do
+	echo Hour: $h
+	((h++))
+	while [ $m -ne 59 ]; do
+		((m++))
+		echo $m
+	done
+	m=0
+done
+
