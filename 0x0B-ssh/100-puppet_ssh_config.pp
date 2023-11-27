@@ -4,7 +4,7 @@ include stdlib
 file_line {'refuse to authenticate using a password':
   ensure  => present,
   path    => '/etc/ssh/ssh_config',
-  line    => '    PasswordAuthentication no'
+  line    => '    PasswordAuthentication no',
   replace => true,
 }
 
