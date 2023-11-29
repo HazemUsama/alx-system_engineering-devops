@@ -1,0 +1,5 @@
+#!/usr/bin/evn bash
+# Setup nginx
+apt-get install nginx -y
+ufw allow 'Nginx HTTP'
+echo "Hello World!" | tee /var/www/html/index.nginx-debian.html
