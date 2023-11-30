@@ -13,7 +13,11 @@ package { 'nginx':
   }
 
 file {'/var/www/html/index.html':
-    content  => 'Hello World!'
+    path    => '/var/www/html/index.html',
+    content => 'Hello World!',
+    owner   => 'ubuntu',
+    group   => 'ubuntu',
+    mode    => '7624'
 }
 
 exec {'redirect_me':
