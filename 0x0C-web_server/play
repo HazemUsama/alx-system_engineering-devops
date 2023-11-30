@@ -1,0 +1,4 @@
+hehe
+listen 80 default_server
+hehe
+rewrite ^/redirect_me https://www.youtube.com/ permanent;
