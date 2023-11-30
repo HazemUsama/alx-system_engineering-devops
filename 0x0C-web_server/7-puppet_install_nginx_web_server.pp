@@ -1,5 +1,5 @@
 # Setup a New Ubuntu server
-exec { 'update sys':
+exec { 'dist update':
     command  => '/usr/bin/apt-get update',
     provider => shell
 
