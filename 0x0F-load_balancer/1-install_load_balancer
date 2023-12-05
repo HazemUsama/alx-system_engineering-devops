@@ -10,7 +10,7 @@ frontend my_fonrtend
 backend my_backend
     balance roundrobin
     server 348631-web-01 54.197.43.224:80 check
-    server 348631-web-02 52.201.178.140	:80 check
+    server 348631-web-02 52.201.178.140:80 check
 "
 # Update packages
 apt-get -y update
