@@ -4,8 +4,7 @@
 sudo apt-get -y update
 sudo apt-get -y install haproxy
 
-sudo cat >>/etc/haproxy/haproxy.cfg
-"
+echo "
 frontend my_fonrtend
 bind *:80
 default_backend my_backend
@@ -14,4 +13,6 @@ backend my_backend
 balance roundrobin
 server web-01 54.197.43.224
 server web-02 52.201.178.140
-"
+" >>/etc/haproxy/haproxy.cfg
+
+sudo systemctl restart haproxy
