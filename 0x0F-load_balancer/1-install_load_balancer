@@ -6,19 +6,19 @@ frontend my_fonrtend
     bind *:80
     mode http
     default_backend my_backend
-
+    
 backend my_backend
     balance roundrobin
-    server 348631-web-01 54.197.43.224:80
-    server 348631-web-02 52.201.178.140:80
+    server 348631-web-01 44.210.150.159:80 check
+    server 348631-web-02 35.173.47.15:80 check
 "
 # Update packages
 apt-get -y update
 apt-get -y upgrade
 
 # Add HAProxy PPA
-apt-get -y install software-properties-common
-add-apt-repository -y ppa:vbernat/haproxy-2.5
+apt-get install --no-install-recommends software-properties-common
+add-apt-repository ppa:vbernat/haproxy-2.0
 apt-get -y update
 apt-get -y install haproxy
 
