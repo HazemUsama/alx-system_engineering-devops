@@ -1,12 +1,6 @@
 #!/usr/bin/env bash
 # Install my load balancer
 
-sudo apt-get -y update
-apt-get -y install software-properties-common
-add-apt-repository -y ppa:vbernat/haproxy-2.5
-apt-get -y update
-sudo apt-get -y install haproxy
-
 balancer="\
 frontend my_fonrtend
     bind *:80
@@ -15,9 +9,18 @@ frontend my_fonrtend
 
 backend my_backend
     balance roundrobin
-    server web-01 54.197.43.224
-    server web-02 52.201.178.140
+    server 348631-web-01 54.197.43.224:80
+    server 348631-web-02 52.201.178.140:80
 "
+# Update packages
+apt-get -y update
+apt-get -y upgrade
+
+# Add HAProxy PPA
+apt-get -y install software-properties-common
+add-apt-repository -y ppa:vbernat/haproxy-2.5
+apt-get -y update
+apt-get -y install haproxy
 
 echo "$balancer" >>/etc/haproxy/haproxy.cfg
-sudo systemctl restart haproxy
+systemctl restart haproxy
