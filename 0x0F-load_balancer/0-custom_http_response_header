@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Setup server
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+echo 'Hello World!' | sudo tee /var/www/html/index >/dev/null
+sudo sed -i '/listen 80 default_server/a\
+rewrite ^/redirect_me https://www.youtube.com/ permanent;
+' /etc/nginx/sites-available/default
+sudo sed -i '/gzip on;/a\
+add_header X-Served-By $hostname;
+' /etc/nginx/nginx.conf
+sudo service nginx start
