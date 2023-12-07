@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
 # Fix Ubuntu container
-
-cd /etc/nginx/sites-enabled/ || exit;
-rm default
-ln -s /etc/nginx/sites-available/default default
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-available/default default
 service nginx restart
