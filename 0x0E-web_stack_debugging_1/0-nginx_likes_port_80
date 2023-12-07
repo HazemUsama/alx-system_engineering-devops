@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 # Fix Ubuntu container
 
-sudo sed -i "s/8080/80/" /etc/nginx/sites-enabled/default;
-sudo service nginx restart
+cd /etc/nginx/site-enabled/;
+rm default;
+ln /etc/nginx/site-avaliable default;
+service nginx restart
