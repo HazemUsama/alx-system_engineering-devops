@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # Fix Ubuntu container
-sudo service nginx start
+service nginx start
+
