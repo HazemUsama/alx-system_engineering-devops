@@ -20,4 +20,4 @@ sudo apt-get update
 sudo apt-get -y install haproxy=2.8.\*
 
 echo "$balancer" >> /etc/haproxy/haproxy.cfg
-systemctl restart haproxy
+sudo systemctl  haproxy restart
