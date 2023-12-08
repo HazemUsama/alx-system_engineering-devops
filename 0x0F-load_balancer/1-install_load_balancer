@@ -4,14 +4,14 @@
 balancer="\
 
 frontend my_fonrtend
-    bind *:80
-    mode http
-    default_backend my_backend
+      bind *:80
+      mode http
+      default_backend my_backend
     
 backend my_backend
-    balance roundrobin
-    server 348631-web-01 54.197.43.224:80 check
-    server 348631-web-02 52.201.178.140:80 check
+      balance roundrobin
+      server 348631-web-01 54.197.43.224:80 check
+      server 348631-web-02 52.201.178.140:80 check
 "
 # Update packages
 sudo apt-get -y install --no-install-recommends software-properties-common
