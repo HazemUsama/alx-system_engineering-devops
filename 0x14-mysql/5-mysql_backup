@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # Create a backup for the database
 
 ARCHIVE_NAME="$(date +'%d-%m-%Y').tar.gz"
