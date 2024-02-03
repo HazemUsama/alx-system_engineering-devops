@@ -12,4 +12,5 @@ if __name__ == "__main__":
                                                           done_tasks,
                                                           len(todos)))
     for task in todos:
-        print('\t {}'.format(task.get('title')))
+        if task.get('completed'):
+            print('\t {}'.format(task.get('title')))
