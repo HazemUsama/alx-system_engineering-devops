@@ -11,7 +11,7 @@ if __name__ == "__main__":
 
     info = {'{}'.format(user.get('id')): [
         {
-            'title': task.get('title'),
+            'task': task.get('title'),
             'completed': task.get('completed'),
             'username': user.get('username')
         }
