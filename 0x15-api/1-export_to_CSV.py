@@ -10,7 +10,7 @@ if __name__ == "__main__":
     todos = requests.get(url + "todos", params={'userId': sys.argv[1]}).json()
 
     info = [{'id': user.get('id'),
-             'name': user.get('name'),
+             'username': user.get('username'),
              'status': task.get('completed'),
              'title': task.get('title')} for task in todos]
 
