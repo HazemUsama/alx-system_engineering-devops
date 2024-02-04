@@ -10,7 +10,8 @@ if __name__ == "__main__":
 
     info = {}
     for user in users:
-        todos = requests.get(url + "todos", params={'userId': user.get('id')}).json()
+        todos = requests.get(url + "todos",
+                             params={'userId': user.get('id')}).json()
 
         info['{}'.format(user.get('id'))] = [
             {
