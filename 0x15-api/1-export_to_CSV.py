@@ -18,5 +18,5 @@ if __name__ == "__main__":
         writer = csv.DictWriter(csv_file,
                                 fieldnames=info[0].keys(),
                                 quoting=csv.QUOTE_ALL)
-
+        writer.writeheader()
         writer.writerows(info)
