@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Display to-do list given employee ID"""
+import csv
 import requests
 import sys
-import csv
 
 if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com/"
