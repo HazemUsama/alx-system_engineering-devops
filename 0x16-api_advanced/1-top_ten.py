@@ -5,16 +5,14 @@ import requests
 
 def top_ten(subreddit):
     """Return the title of the top subs"""
-    if subreddit is None or type(subreddit) is not str:
-        return 0
-
     results = requests.get("https://www.reddit.com/r/{}/top.json"
                            .format(subreddit),
-                           params={"limit": 10})
+                           params={"limit": 10},
+                           allow_redirects=False)
 
-    posts = results.json().get("data", {}).get("children", {})
-    if posts is {}:
+    if results.status_code == 404:
         print("None")
     else:
+        posts = results.json().get("data", {}).get("children", {})
         for post in posts:
             print(post.get("data", {}).get("title", ""))
