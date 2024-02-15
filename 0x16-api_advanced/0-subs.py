@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Script to show how many subs in a subreddit"""
 import requests
-import os
 
 
 def number_of_subscribers(subreddit):

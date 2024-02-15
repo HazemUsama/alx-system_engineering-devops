@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Script to show first 10 hot posts listed for a given subreddit"""
 import requests
-import os
 
 
 def top_ten(subreddit):
