@@ -11,7 +11,7 @@ def top_ten(subreddit):
                            allow_redirects=False,
                            headers={'User-Agent': '/u/Hazemusama'})
 
-    if results.status_code == 404:
+    if results.status_code != 200:
         print("None")
     else:
         posts = results.json().get("data", {}).get("children", {})

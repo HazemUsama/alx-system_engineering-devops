@@ -9,16 +9,16 @@ def recurse(subreddit, hot_list=[], after=None):
                            .format(subreddit),
                            params={"after": after},
                            allow_redirects=False,
-                           headers={'User-Agent': '/u/Hazemusama'}).json()
+                           headers={'User-Agent': '/u/Hazemusama'})
 
-    if results is None:
+    if results.status_code != 200:
         return None
 
-    posts = results.get("data", {}).get("children", {})
+    posts = results.json().get("data", {}).get("children", {})
     for post in posts:
         hot_list.append(post.get("data", {}).get("title", ""))
 
-    after = results.get("data", {}).get("after", None)
+    after = results.json().get("data", {}).get("after", None)
     if after is None:
         return hot_list
     else:
