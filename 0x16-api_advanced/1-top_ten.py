@@ -7,7 +7,6 @@ def top_ten(subreddit):
     """Return the title of the top subs"""
     results = requests.get("https://www.reddit.com/r/{}/top.json"
                            .format(subreddit),
-                           headers={'User-Agent': '/u/Hazemusama'},
                            params={"limit": 10})
 
     posts = results.json().get("data", {}).get("children")
