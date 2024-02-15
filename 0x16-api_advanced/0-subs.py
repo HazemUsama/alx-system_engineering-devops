@@ -9,5 +9,4 @@ def number_of_subscribers(subreddit):
                            .format(subreddit),
                            headers={'User-Agent': '/u/Hazemusama'}).json()
 
-    subs = results.get("data", {}).get("subscribers", 0)
-    return subs
+    return results.get("data", {}).get("subscribers", 0)
