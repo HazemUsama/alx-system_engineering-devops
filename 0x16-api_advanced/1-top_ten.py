@@ -9,11 +9,11 @@ def top_ten(subreddit):
                            .format(subreddit),
                            params={"limit": 10},
                            allow_redirects=False,
-                           headers={'User-Agent': '/u/Hazemusama'}).json()
+                           headers={'User-Agent': '/u/Hazemusama'})
 
     if results.status_code == 404:
         print("None")
     else:
-        posts = results.get("data", {}).get("children", {})
+        posts = results.json().get("data", {}).get("children", {})
         for post in posts:
             print(post.get("data", {}).get("title", ""))
