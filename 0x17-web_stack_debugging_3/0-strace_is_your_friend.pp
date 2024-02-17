@@ -1,10 +1,8 @@
-# Strace is your friend
-include stdlib
+#Fix typo
 
-file_line {'Fix the typo':
-  ensure  => present,
-  path    => '/var/www/html/wp-settings.php',
-  line    => 'equire_once( ABSPATH . WPINC . "/class-wp-locale.php" );',
-  replace => true,
-
-}
+exec { 'command':
+  command  => '
+  sed -i "s/class-wp-locale.phpp/class-wp-locale.php/" /var/www/html/wp-settings.php
+  service apache2 restrat',
+  provider => shell,
+  }
