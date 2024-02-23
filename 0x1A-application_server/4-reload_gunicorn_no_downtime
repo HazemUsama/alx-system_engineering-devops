@@ -1,8 +1,3 @@
 #!/usr/bin/env bash
 #reload Gunicorn in a graceful way
-pids=$(pgrep gunicorn)
-
-for pid in $pids; do
-    kill -s HUP "$pid"
-    echo "Sent graceful reload signal to worker $pid"
-done
+pgrep gunicorn | xargs kill -HUP
