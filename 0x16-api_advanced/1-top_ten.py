@@ -9,7 +9,7 @@ def top_ten(subreddit):
                            .format(subreddit),
                            params={"limit": 10},
                            allow_redirects=False,
-                           headers={'User-Agent': '/u/Hazemusama'})
+                           headers={'User-agent': 'Mozilla/5.0'})
 
     if results.status_code != 200:
         print("None")
